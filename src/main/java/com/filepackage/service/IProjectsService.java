@@ -1,4 +1,4 @@
 package com.filepackage.service;
 
-public class IUserSkills {
+public interface IProjectsService {
 }

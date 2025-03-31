@@ -1,4 +1,4 @@
 package com.filepackage.service;
 
-public interface IProjectFiles {
+public interface IBlogService {
 }

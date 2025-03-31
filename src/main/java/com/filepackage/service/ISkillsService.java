@@ -1,4 +1,4 @@
 package com.filepackage.service;
 
-public interface ISkills {
+public interface ISkillsService {
 }

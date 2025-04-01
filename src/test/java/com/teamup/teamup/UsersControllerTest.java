@@ -4,6 +4,7 @@ import com.filepackage.TeamupApplication;
 import com.filepackage.dto.UsersDto;
 import com.filepackage.entity.Role;
 import com.filepackage.entity.Users;
+import com.filepackage.repository.IProjectsRepository;
 import com.filepackage.repository.IUsersRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.*;
@@ -37,6 +38,9 @@ public class UsersControllerTest {
     @Autowired
     private IUsersRepository usersRepository;
 
+    @Autowired
+    private IProjectsRepository projectsRepository;
+
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     private String getBaseUrl() {
@@ -45,6 +49,7 @@ public class UsersControllerTest {
 
     @BeforeEach
     void setUp() {
+        projectsRepository.deleteAll();
         usersRepository.deleteAll();
     }
 

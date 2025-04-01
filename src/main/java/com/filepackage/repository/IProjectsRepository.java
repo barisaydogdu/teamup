@@ -1,4 +1,6 @@
 package com.filepackage.repository;
 
-public interface IProjectsRepository {
+import com.filepackage.entity.Projects;
+
+public interface IProjectsRepository extends IBaseRepository<Projects> {
 }

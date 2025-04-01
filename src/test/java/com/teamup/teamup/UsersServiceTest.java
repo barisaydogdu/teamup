@@ -10,7 +10,6 @@ import com.filepackage.service.Impl.UsersService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.*;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.*;
 
@@ -34,6 +33,7 @@ class UsersServiceTest {
         MockitoAnnotations.openMocks(this);
         usersService = new UsersService(usersRepository);
         usersService.autoMapper = autoMapper;
+        usersRepository.deleteAll();
     }
 
     @Test
@@ -136,20 +136,6 @@ class UsersServiceTest {
         assertNotNull(result);
         verify(usersRepository).findById(id);
     }
-
-//    @Test
-//    void testSaveUser() {
-//        Users user = new Users();
-//        user.setPassword("plainpass");
-//
-//        when(passwordEncoder.encode("plainpass")).thenReturn("encodedpass");
-//        when(usersRepository.save(user)).thenReturn(user);
-//
-//        Users saved = usersService.saveUser(user);
-//
-//        assertEquals("encodedpass", saved.getPassword());
-//        verify(usersRepository).save(user);
-//    }
 
     @Test
     void testFindByEmail() {

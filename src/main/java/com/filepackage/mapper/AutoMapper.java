@@ -18,4 +18,7 @@ public class AutoMapper {
         return modelMapper.map(dto, entityClass);
     }
 
+    public void map(Object source, Object destination) {
+        modelMapper.map(source,destination);
+    }
 }

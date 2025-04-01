@@ -1,4 +1,6 @@
 package com.filepackage.service;
 
-public interface IProjectsService {
+import com.filepackage.dto.ProjectsDto;
+
+public interface IProjectsService <ProjectsDto,Long> extends IBaseService<ProjectsDto,Long>{
 }

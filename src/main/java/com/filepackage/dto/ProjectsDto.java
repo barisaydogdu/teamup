@@ -1,8 +1,17 @@
 package com.filepackage.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 import java.util.Date;
 
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class ProjectsDto {
     private Long projectID;
 
@@ -10,13 +19,7 @@ public class ProjectsDto {
 
     private String title;
 
-    public UsersDto getUser() {
-        return user;
-    }
-
-    public void setUser(UsersDto user) {
-        this.user = user;
-    }
+    private Integer user_id;
 
     private UsersDto user;
 
@@ -40,6 +43,14 @@ public class ProjectsDto {
 
     private LocalDateTime maxTeam;
 
+    public UsersDto getUser() {
+        return user;
+    }
+
+    public void setUser(UsersDto user) {
+        this.user = user;
+    }
+
     public Long getProjectID() {
         return projectID;
     }
@@ -47,14 +58,6 @@ public class ProjectsDto {
     public void setProjectID(Long projectID) {
         this.projectID = projectID;
     }
-
-//    public Long getCreatorID() {
-//        return creatorID;
-//    }
-
-//    public void setCreatorID(Long creatorID) {
-//        this.creatorID = creatorID;
-//    }
 
     public String getTitle() {
         return title;
@@ -143,8 +146,4 @@ public class ProjectsDto {
     public void setMaxTeam(LocalDateTime maxTeam) {
         this.maxTeam = maxTeam;
     }
-
-
-
-
 }

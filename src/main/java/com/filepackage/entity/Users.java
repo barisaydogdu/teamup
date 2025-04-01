@@ -12,8 +12,8 @@ import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 
+
 @Getter
-@Setter
 @Entity
 @Table(name = "users",schema = "public", uniqueConstraints = {@UniqueConstraint(columnNames = "email")})
 @AllArgsConstructor
@@ -25,6 +25,43 @@ public class Users implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private Long id;
+
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "last_name")
+    private String lastName;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "password")
+    private String password;
+
+    @Column(name = "profile_picture")
+    private String profilePicture;
+
+    @Column(name = "bio")
+    private String bio;
+
+    @Column(name = "phone_number")
+    private String phoneNumber;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role")
+    private Role role;
+
+    @Column(name = "phone_visibility")
+    private boolean phoneVisibility;
+
+    @Column(name = "account_created_at")
+    private LocalDateTime accountCreatedAt;
+
+    @Column(name = "last_login")
+    private LocalDateTime lastLogin;
+
+    @Column(name = "account_status")
+    private String accountStatus;
 
     public Long getId() {
         return id;
@@ -125,46 +162,6 @@ public class Users implements UserDetails {
     public void setAccountStatus(String accountStatus) {
         this.accountStatus = accountStatus;
     }
-
-    @Column(name = "first_name")
-    private String firstName;
-
-    @Column(name = "last_name")
-    private String lastName;
-
-    @Column(name = "email")
-    private String email;
-
-    @Column(name = "password")
-    private String password;
-
-    @Column(name = "profile_picture")
-    private String profilePicture;
-
-    @Column(name = "bio")
-    private String bio;
-
-    @Column(name = "phone_number")
-    private String phoneNumber;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "role")
-    private Role role;
-
-    @Column(name = "phone_visibility")
-    private boolean phoneVisibility;
-
-    @Column(name = "account_created_at")
-    private LocalDateTime accountCreatedAt;
-
-    @Column(name = "last_login")
-    private LocalDateTime lastLogin;
-
-    @Column(name = "account_status")
-    private String accountStatus;
-
-
-
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

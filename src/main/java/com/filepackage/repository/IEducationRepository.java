@@ -1,4 +1,8 @@
 package com.filepackage.repository;
 
-public interface IEducationRepository {
+import com.filepackage.entity.Education;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface IEducationRepository extends IBaseRepository<Education> {
 }

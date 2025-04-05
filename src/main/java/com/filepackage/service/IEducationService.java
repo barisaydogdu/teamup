@@ -1,4 +1,4 @@
 package com.filepackage.service;
 
-public interface IEducationService {
+public interface IEducationService<EducationDto,Long> extends IBaseService<EducationDto,Long> {
 }
